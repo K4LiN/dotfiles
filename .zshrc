@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -76,4 +76,15 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
  export PATH="$HOME/.rbenv/bin:$PATH"
  eval "$(rbenv init -)"
 
- xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+ 
+function rsc() {
+  CLIENTID=$1.`date +%S`
+  tmux new-session -d -t $1 -s $CLIENTID \; set-option destroy-unattached \; attach-session -t $CLIENTID
+}
+
+function mksc() {
+  tmux new-session -d -s $1
+  rsc $1
+}
+
