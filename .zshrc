@@ -48,7 +48,7 @@ ZSH_THEME="mh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails ruby archlinux common-aliases compleat dircycle dirhistory gem gitfast git-extras git-flow git-remote-branch github gradle lighthouse node nyan npm sudo systemd tmux web-search )
+plugins=(git rails ruby archlinux common-aliases compleat dircycle dirhistory gem gitfast git-extras git-flow git-remote-branch github gradle node npm sudo systemd tmux web-search )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,7 +76,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
  export PATH="$HOME/.rbenv/bin:$PATH"
  eval "$(rbenv init -)"
 
-xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
  
 function rsc() {
   CLIENTID=$1.`date +%S`
@@ -88,3 +87,12 @@ function mksc() {
   rsc $1
 }
 
+alias lineman='./node_modules/.bin/lineman'
+alias ks='cd /home/kalinq/webdesign/kalistenika/'
+
+alias fuck='sudo $(fc -ln -1)'
+
+unset GREP_OPTIONS
+
+#tilda 256 color mode
+#export TERM=xterm-256color
